@@ -1,0 +1,154 @@
+@import './abstracts/index.scss';
+
+.game{
+  &_top{
+    width: 1366px;
+    max-width: calc(100% - 20px);
+    padding-inline: 10px;
+    margin: 0 auto;
+    &__container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80px;
+      gap: 16px;
+    }
+    &__phase,&__historic,&__next{
+      background-color: $secondaryBackground;
+      border: 1px solid rgba($primary, .1);
+      border-radius: 5px;
+      padding: 16px;
+      color: $text;
+      span{
+        color: $primary;
+      }
+    }
+    &__historic,&__next{
+      cursor: pointer;
+      color: $text;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+  &_middle{
+    &__board{
+      width: 1366px;
+      max-width: calc(100% - 20px);
+      margin: 0 auto;
+
+      &--controls{
+        width: 1366px;
+        max-width: calc(100% - 20px);
+        padding-inline: 10px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      &--input{
+        width: 200px;
+        padding: 10px;
+        background-color: $secondaryBackground;
+        color: $text;
+        outline: unset;
+      }
+      &--button{
+        background-color: $secondaryBackground;
+        border: 1px solid rgba($primary, .1);
+        border-radius: 5px;
+        padding: 8px 16px;
+        color: $text;
+        cursor: pointer;
+        width: fit-content;
+        &:hover{
+          color: $primary;
+        }
+      }
+    }
+  }
+  &_bottom{
+    width: 1366px;
+    max-width: calc(100% - 20px);
+    padding-inline: 10px;
+    margin: 0 auto;
+    &__results{
+      padding-block: 20px;
+      color: $text;
+      margin: 20px auto;
+      width: 600px;
+      min-height: 200px;
+      height: fit-content;
+      max-width: calc(100% - 20px);
+      border-radius: 5px;
+      border: 1px solid #333;
+      background-color: $secondaryBackground;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      >div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+      }
+      .error{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: $redAlert;
+        background-color: $secondaryBackground;
+        border: 1px solid $redAlert;
+      }
+      .correct{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: $primary;
+        background-color: $secondaryBackground;
+        border: 1px solid $primary;
+      }
+      .attention{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: $yellowAlert;
+        background-color: $secondaryBackground;
+        border: 1px solid $yellowAlert;
+      }
+    }
+    &__clue{
+      padding-block: 20px;
+      color: $text;
+      margin: 20px auto;
+      width: 600px;
+      height: fit-content;
+      max-width: calc(100% - 20px);
+      border-radius: 5px;
+      border: 1px solid #333;
+      background-color: $secondaryBackground;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      strong{
+        color: $primary;
+      }
+    }
+  }
+}

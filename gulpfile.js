@@ -7,7 +7,7 @@ const uglify = require('gulp-uglify');
 gulp.task('styles', () => {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('styles.min.css')) 
+    .pipe(concat('styles.min.css'))
     .pipe(cleanCSS())
     .pipe(gulp.dest('dist'));
 });
