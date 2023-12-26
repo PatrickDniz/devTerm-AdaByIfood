@@ -2,7 +2,7 @@ class Game {
   constructor(word) {
     this.word = word.toUpperCase();
     this.limit = this.word.length;
-    this.attempt = 1;
+    this.attempt = 0;
     this.maxAttempt = 8;
     this.attempDiv = document.querySelector(".game_bottom__clue--attemps strong");
     this.input = document.querySelector('.game_middle__board--input');
@@ -27,19 +27,19 @@ class Game {
           this.nextWord('victory');
         }
 
-        const stringAux = guessedWord;
+        const stringAux = this.word.split('');
         const arrayAux = [];
         for (let i = 0; i < this.word.length; i++) {
           if (this.word[i] == guessedWord[i]){
             arrayAux[i] = 'correct';
-            stringAux.replace(this.word[i],"");
+            stringAux.splice(i, 1 , "");
           }
         }
         for (let i = 0; i < this.word.length; i++) {
-          if(!arrayAux[i] == 'correct'){
-            if(stringAux.sum(this.word[i])){
+          if(!arrayAux[i]){
+            if(stringAux.find(item => item == guessedWord[i])){
               arrayAux[i] = 'attention';
-              stringAux.replace(this.word[i],"");
+              stringAux.splice(stringAux.indexOf(this.word[i]), 1 , "");
             }
           }
         }
